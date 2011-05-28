@@ -23,3 +23,9 @@ should not be aligned.  Here is an example:
 ```
 
 Also, avoid indenting things like `@interface`, `@end`, and so on.
+
+
+## Installing
+
+Assuming you use the Pathogen plugin, just clone this repository in your
+`~/.vim/bundle` folder.
