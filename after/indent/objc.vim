@@ -19,15 +19,14 @@ set cpo&vim
 setlocal indentexpr=GetObjCIndentImproved()
 
 " Top level statements which should not be indented, and which should not
-" cause next line to be indented either.
+" cause next (non-blank) line to be indented either.
 let s:topLev = '^\s*@\%(class\|end\|implementation\|interface\|protocol\|\)\>'
 
 function! GetObjCIndentImproved()
     let theIndent = cindent(v:lnum)
     let thisLine = getline(v:lnum)
-    let prevLine = getline(v:lnum - 1)
 
-    if thisLine =~# s:topLev || prevLine =~# s:topLev
+    if thisLine =~# s:topLev || getline(prevnonblank(v:lnum - 1)) =~# s:topLev
       return 0
     endif
 
@@ -45,6 +44,7 @@ function! GetObjCIndentImproved()
     "
     let thisColon = match(thisLine, '^\s*\K\k*\zs:')
     if thisColon > 0
+      let prevLine = getline(v:lnum - 1)
       let prevColon = match(prevLine, ':')
       if prevColon > 0
         " Try to align colons, always making sure line is indented at least
