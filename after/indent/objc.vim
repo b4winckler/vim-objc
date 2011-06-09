@@ -56,7 +56,7 @@ function! GetObjCIndentImproved()
         "
         let [lnum,lcol] = searchpairpos('\[', '', '\]', 'b', 0,
               \ max([1, v:lnum - 10]))
-        let minInd = indent(lnum) + &sw
+        let minInd = &sw + (lnum > 0 ? indent(lnum) : 0)
         let alignedInd = indent(v:lnum) + prevColon - thisColon
         return alignedInd > minInd ? alignedInd : minInd
       endif
