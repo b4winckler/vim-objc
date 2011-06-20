@@ -1,10 +1,8 @@
 ## What is in here?
 
 This repository contains my Vim configuration files for Objective-C editing.
-Once tested, I intend to submit my changes to be included with the default Vim
-distribution.
-
 If you have any improvements, please don't hesitate to send them my way.
+
 
 ### Improved indenting
 
@@ -26,6 +24,12 @@ which my improved indent expression can handle:
 ```
 
 Also, avoid indenting things like `@interface`, `@end`, and so on.
+
+
+### Updated syntax highlighting
+
+Objective-C 2.0 introduced new keywords which should be highlighted but are not
+by default.  Try to remedy this situation.
 
 
 ## Installing
