@@ -32,6 +32,13 @@ Objective-C 2.0 introduced new keywords which should be highlighted but are not
 by default.  Try to remedy this situation.
 
 
+### Miscellaneous
+
+Set `'commentstring'` to use C++ style comments instead of C-style comments
+(this is for example used by the
+[commentary.vim](https://github.com/tpope/vim-commentary) plugin).
+
+
 ## Installing
 
 Assuming you use the Pathogen plugin, just clone this repository in your
