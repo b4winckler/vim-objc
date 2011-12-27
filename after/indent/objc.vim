@@ -15,6 +15,7 @@ set cpo&vim
 "setlocal cindent
 
 "setl indentkeys+=@end
+setl indentkeys=0{,0},:,0#,!^F,o,O,e
 
 setlocal indentexpr=GetObjCIndentImproved()
 
@@ -61,6 +62,26 @@ function! GetObjCIndentImproved()
       let alignedInd = indent(v:lnum - 1) + prevColon - thisColon
       return alignedInd > minInd ? alignedInd : minInd
     endif
+  endif
+
+  let prevLnum = v:lnum - 1
+  let ind      = indent(prevLnum)
+
+  " Indent one shiftwidth after opening block, e.g.:
+  "
+  "   call_func_with_block(param, ^{
+  "       do_stuff();
+  "   });
+  "
+  if getline(v:lnum) =~ '^\s*}'
+    norm '^%'
+    if getline(".") =~ '\^{$'
+      return indent(".")
+    endif
+  endif
+
+  if getline(prevLnum) =~ '\^{$'
+    return ind + &sw
   endif
 
   return cindent(v:lnum)
