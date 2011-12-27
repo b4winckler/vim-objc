@@ -23,6 +23,14 @@ which my improved indent expression can handle:
 }
 ```
 
+I have also added better indenting for blocks, for example:
+
+```objc
+  dispatch_async(queue, ^{
+      do_stuff();   // indented one shiftwidth
+  }); // previous indent restored
+```
+
 Also, avoid indenting things like `@interface`, `@end`, and so on.
 
 
