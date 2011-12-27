@@ -14,8 +14,7 @@ set cpo&vim
 "let b:did_indent = 1
 "setlocal cindent
 
-"setl indentkeys+=@end
-setl indentkeys=0{,0},:,0#,!^F,o,O,e
+setl indentkeys=0{,0},:,0#,!^F,o,O,e,<:>
 
 setlocal indentexpr=GetObjCIndentImproved()
 
