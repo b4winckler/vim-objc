@@ -1,7 +1,7 @@
 " Vim indent file
 " Language:	Objective-C
 " Maintainer:	Bjorn Winckler <bjorn.winckler@gmail.com>
-" Last Change:	2011 May 26
+" Last Change:	2012 Jan 01
 
 " Ensure 'cpo' is set to Vim default values and restore later
 let s:save_cpo = &cpo
@@ -72,14 +72,15 @@ function! GetObjCIndentImproved()
   "       do_stuff();
   "   });
   "
-  if getline(v:lnum) =~ '^\s*}'
+  let blockPat = '\^\s*\(([^)]*)\)\?\s*{$'
+  if thisLine =~ '^}'
     norm '^%'
-    if getline(".") =~ '\^{$'
+    if getline(".") =~ blockPat
       return indent(".")
     endif
   endif
 
-  if getline(prevLnum) =~ '\^{$'
+  if getline(prevLnum) =~ blockPat
     return ind + &sw
   endif
 
