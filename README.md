@@ -48,13 +48,8 @@ Set `'commentstring'` to use C++ style comments instead of C-style comments
 [commentary.vim](https://github.com/tpope/vim-commentary) plugin).
 
 Set `'includeexpr'` so that commands like `gf` work on framework imports.  For
-example, place the cursor inside the angle brackets on a line like
-
-```objc
-#import <OpenGL/OpenGL.h>
-```
-
-and hit `gf` to open up the `OpenGL.h` header.
+example, place the cursor inside the angle brackets on a line like `#import
+<OpenGL/OpenGL.h>` and hit `gf` to open up the `OpenGL.h` header.
 
 
 ## Installing
