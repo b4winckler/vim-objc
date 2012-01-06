@@ -38,7 +38,7 @@ Also, avoid indenting things like `@interface`, `@end`, and so on.
 
 Objective-C 2.0 introduced new keywords which should be highlighted but are not
 by default.  Automatic reference counting (ARC) also adds a few keywords that
-are not highighted.  Try to remedy this situation.
+are not highlighted.  Try to remedy this situation.
 
 
 ### Miscellaneous
