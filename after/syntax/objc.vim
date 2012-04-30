@@ -5,3 +5,6 @@ syn keyword objcTypeModifier __bridge __bridge_retained __bridge_transfer __auto
 
 " Block modifiers
 syn keyword objcTypeModifier __block
+
+" Remote messaging modifiers
+syn keyword objcTypeModifier byref
