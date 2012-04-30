@@ -45,7 +45,7 @@ are not highlighted.  Try to remedy this situation.
 
 Set `'commentstring'` to use C++ style comments instead of C-style comments
 (this is for example used by the
-[commentary.vim](https://github.com/tpope/vim-commentary) plugin).
+[Commentary plugin](https://github.com/tpope/vim-commentary)).
 
 Set `'includeexpr'` so that commands like `gf` work on framework imports.  For
 example, place the cursor inside the angle brackets on a line like `#import
@@ -54,8 +54,9 @@ example, place the cursor inside the angle brackets on a line like `#import
 
 ## Installing
 
-Assuming you are using the Pathogen plugin, just clone this repository in your
-`~/.vim/bundle` folder like so:
+Assuming you are using the
+[Pathogen plugin](https://github.com/tpope/vim-pathogen),
+just clone this repository in your `~/.vim/bundle` folder like so:
 
 ```
 $ cd ~/.vim/bundle
