@@ -20,7 +20,7 @@ setlocal indentexpr=GetObjCIndentImproved()
 
 " Top level statements which should not be indented, and which should not
 " cause next (non-blank) line to be indented either.
-let s:topLev = '^\s*@\%(class\|end\|implementation\|protocol\|\)\>'
+let s:topLev = '^\s*@\%(class\|end\|implementation\|interface\|protocol\|\)\>'
 
 function! GetObjCIndentImproved()
   " NOTE: Ignore leading white space to avoid having to deal with space vs.
